@@ -13,44 +13,112 @@
             place-items: center;
         }
         .phone { /*creando el telefono*/
-            position: relative;/*posiciona el elemnto de manera relativa dentro del flujo normal*/
+            position: relative;/*posiciona el elemento de manera relativa dentro del flujo normal*/
             border: 8px solid black;/*grueso del borde*/
             border-radius: 40px; /*borde redondeado del telefono*/
             height: 600px;/*alto*/
             width: 300px; /*ancho*/
             background: #ccefff;/*color*/
             box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);/*agrega sombra por fuera del borde del elemento*/
+            overflow: hidden;
         }
         /*apilamiento, sobreposicion de varios elementos*/
         .layer-1 {
             position: absolute;
+            z-index: 1;/*determina el orden en que se apilaran*/
+            height: 450px;/*alto del elemento dentro del contenedor*/
+            width: 80px; /*ancho del elemento*/
+            background: white;
+            bottom: 0; /*para que inicie desde abajo*/
+            right: 60px;/*para que se alinee a la derecha*/
         }
         .layer-2 {
             position: absolute;
+            z-index: 2;
+            height: 450px;/*alto del elemento dentro del contenedor*/
+            width: 80px; /*ancho del elemento*/
+            background: white;
+            bottom: 0; /*para que inicie desde abajo*/
+            left: 60px;/*para que se alinee a la izquierda*/
         }
         .layer-3 {
             position: absolute;
+            z-index: 3;
+            left: 0;/*left 0 right 0 margin 0 auto centran un elemento del del contenedor*/
+            right: 0;
+            margin: 0 auto;
+            width: 220px;/*ancho del muro*/
+            height: 400px;/*alto del muro*/
+            background: brown;
+            bottom: 0;/*inicie de la parte de abajo*/
         }
         .layer-4 {
             position: absolute;
+            z-index: 4;
+            height: 340px;
+            width: 80px;
+            background: white;
+            bottom: 0;
+            left: 15px;
+        
         }
         .layer-5 {
             position: absolute;
+            z-index: 5;
+            left: 0;
+            height: 280px;
+            width: 200px;
+            background: rgb(136, 46, 46);
+            bottom: 0;
         }
         .layer-6 {
             position: absolute;
+            z-index: 6;
+            height: 230px;
+            width: 80px;
+            background: white;
+            bottom: 0;
+            right: 35px;
+         
         }
         .layer-7 {
             position: absolute;
+            z-index: 7;
+            right: 0;
+            height: 200px;
+            width: 200px;
+            background: chocolate;
+            bottom: 0;
         }
         .layer-8 {
             position: absolute;
+            z-index: 8;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            height: 120px;
+            width: 150px;
+            background: green;
+            bottom: 0;
+
         }
         .layer-9 {
             position: absolute;
+            z-index: 9;
+            height: 110px;
+            width: 100px;
+            left: 0;
+            background: white;
+            bottom: 0;
         }
         .layer-10 {
             position: absolute;
+            z-index: 10;
+            height: 110px;
+            width: 100px;
+            right: 0;
+            background: white;
+            bottom: 0;
         }
     </style>
 </head>
