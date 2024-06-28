@@ -14,6 +14,7 @@
             --shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
             }
         body {
+            counter-reset: score;
             margin: 0;
             height: 100vh;
             width: 100%;
@@ -37,19 +38,75 @@
             z-index: 1;/*determina el orden en que se apilaran*/
             height: 450px;/*alto del elemento dentro del contenedor*/
             width: 80px; /*ancho del elemento*/
-            background:  #ccefff;
             bottom: 0; /*para que inicie desde abajo*/
             right: 60px;/*para que se alinee a la derecha*/
+
+            animation-name: layer;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;/*aceleracion de la animacion*/
+            animation-iteration-count: infinite;/*numero de veces que se repetirá*/
         }
+
+        @keyframes layer {
+          0% {
+             bottom: 0;
+          }
+          25% {
+             bottom: -80px;
+          }
+          100% {
+            bottom: 0;
+          }
+        }
+
+        .layer-1 input[type=checkbox] { /*esto significa que si tenemos una clase padre llamada layer-1 vamos a trabajar en un hijo de tipo checkbox*/
+           
+        position: absolute;
+        appearance: none;
+        cursor: pointer;
+        z-index: 1;
+        width: 100%;
+        height: 80px;
+    }
+
+        
+      
         .layer-2 {
             position: absolute;
             z-index: 2;
             height: 450px;/*alto del elemento dentro del contenedor*/
             width: 80px; /*ancho del elemento*/
-            background:  #ccefff;
             bottom: 0; /*para que inicie desde abajo*/
             left: 60px;/*para que se alinee a la izquierda*/
+
+            animation-name: layer;
+            animation-duration: 1.3s;
+            animation-timing-function: ease-in-out;/*aceleracion de la animacion*/
+            animation-iteration-count: infinite;
         }
+
+        @keyframes layer {
+          0% {
+             bottom: 0;
+          }
+          25% {
+             bottom: -80px;
+          }
+          100% {
+            bottom: 0;
+          }
+        }
+
+        .layer-1 input[type=checkbox] { /*esto significa que si tenemos una clase padre llamada layer-1 vamos a trabajar en un hijo de tipo checkbox*/
+           
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+       }
+
         .layer-3 {
             position: absolute;
             z-index: 3;
@@ -87,9 +144,35 @@
             z-index: 4;
             height: 330px;
             width: 80px;
-            background:  pink;
             bottom: 0;
             left: 15px;
+
+            animation-name: layer;
+            animation-duration: 0.75s;
+            animation-timing-function: ease-in-out;/*aceleracion de la animacion*/
+            animation-iteration-count: infinite;
+
+            @keyframes layer {
+          0% {
+             bottom: 0;
+          }
+          25% {
+             bottom: -80px;
+          }
+          100% {
+            bottom: 0;
+          }
+        }
+
+        .layer-1 input[type=checkbox] { /*esto significa que si tenemos una clase padre llamada layer-1 vamos a trabajar en un hijo de tipo checkbox*/
+           
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+       }
         
         }
         .layer-5 {
@@ -107,9 +190,35 @@
             z-index: 6;
             height: 250px;
             width: 80px;
-            background: pink;
             bottom: 0;
             right: 35px;
+
+            animation-name: layer;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;/*aceleracion de la animacion*/
+            animation-iteration-count: infinite;
+
+            @keyframes layer {
+          0% {
+             bottom: 0;
+          }
+          25% {
+             bottom: -80px;
+          }
+          100% {
+            bottom: 0;
+          }
+        }
+
+        .layer-1 input[type=checkbox] { /*esto significa que si tenemos una clase padre llamada layer-1 vamos a trabajar en un hijo de tipo checkbox*/
+           
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+       }
          
         }
         .layer-7 {
@@ -130,27 +239,30 @@
             margin: 0 auto;
             height: 120px;
             width: 150px;
-            background: green;
+            background: rgb(242, 225, 225);
             bottom: 0;
+            border-radius: 25px;
 
         }
         .layer-9 {
             position: absolute;
             z-index: 9;
-            height: 110px;
-            width: 100px;
+            height: 100px;
+            width: 130px;
             left: 0;
-            background: white;
+           background: white;
             bottom: 0;
+            border-radius: 25px;
         }
         .layer-10 {   /*layer 10 es el z-index 1*/
             position: absolute;
             z-index: 10;
-            height: 110px;
-            width: 100px;
+            height: 100px;
+            width: 130px;
             right: 0;
             background: white;
             bottom: 0;
+            border-radius: 25px;
         }
            /*estilos para realizar las orejas del conejo*/
         .left-ear--outer {
@@ -201,27 +313,116 @@
         }
         /*ojos del conejo*/
         .head__eye {
-            background: black;
+            background: grey;
             border-radius: 50%;
             width: 4px;
             height: 4px;
             position: absolute;
             top: 15px;
+
+            animation-name: blink;/*animacion de*/
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            
         }
+        @keyframes blink {  /*parpadeo para los ojos*/
+         0% {
+            height: 4px;
+         }
+        5% {
+            transform: translate(0px, 2px);
+            height: 1px;
+        }
+        10% {
+            transform: translate(0px 0px);
+            height: 4px;
+        }
+        
         /*posicionar ojos del conejo*/
-        .head__eye--left {
-            left: 30px;
         }
         .head__eye--right {
             right: 30px;
         }
-        
+        .head__eye--left {
+            left: 30px;
+        }
+
+        @-webkit-keyframes blink {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+    5% {
+      -webkit-transform: scaleY(0.2);
+      transform: scaleY(0.2);
+    }
+    15% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+    5% {
+      -webkit-transform: scaleY(0.2);
+      transform: scaleY(0.2);
+    }
+    15% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+
+  .animation-off {
+    animation: none;
+  }
+  
+  /* ANIMATIONS */
+  @-webkit-keyframes layer {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+    }
+  }
+  
+  @keyframes layer {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+    }
+  }
+  .title {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    text-align: center;
+  }
+   
     </style>
 </head>
 <body>
     <div class="phone">
+      <h2 class="title">ANIMATIONLAND</h2>
+      <h4 class="subtitle">Score:</h4>
         <!--conejo 1-->
        <div class="layer-1">
+        <input type="checkbox">
          <div class="left-ear--outer"></div>
          <div class="left-ear--inner"></div>
          <div class="right-ear--outer"></div>
@@ -280,9 +481,21 @@
         <div class="grass"></div>
         <div class="zigzag"></div>
        </div> 
-       <div class="layer-8"></div> <!--cesped-->
-       <div class="layer-9"></div> <!--cesped-->
-       <div class="layer-10"></div> <!--cesped-->  <!--layer10 es el z-index1-->
-    </div>
+       <div class="layer layer-8">
+        <div class="bush bush-1"></div>
+        <div class="bush bush-2"></div>
+        <div class="bush bush-3"></div>
+      </div>
+
+       <div class="layer layer-9">
+        <div class="cloud cloud--left-1"></div>
+        <div class="cloud cloud--left-2"></div>
+      </div>
+
+
+      <div class="layer layer-10">
+        <div class="cloud cloud--right-1"></div>
+        <div class="cloud cloud--right-2"></div>
+      </div>
 </body>
 </html>
